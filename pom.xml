@@ -112,7 +112,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<jvmTarget>11</jvmTarget>
+					<jvmTarget>${kotlin-maven.jvm-target}</jvmTarget>
 				</configuration>
 			</plugin>
 		</plugins>
