@@ -11,6 +11,7 @@
 	
 	<modules>
 		<module>Common</module>
+		<module>Json</module>
 	</modules>
 	
 	<properties>
@@ -25,6 +26,13 @@
 		
 		<kotlin.version>1.4.0</kotlin.version>
 		<kotlin-maven.jvm-target>${project.java.version}</kotlin-maven.jvm-target>
+		
+		<junit-platform.version>1.5.2</junit-platform.version>
+		<junit-jupiter.version>5.4.2</junit-jupiter.version>
+		<assertj.version>3.12.2</assertj.version>
+		
+		<jackson.version>2.9.7</jackson.version>
+		<tomplot.version>1.0.0-SNAPSHOT</tomplot.version>
 	</properties>
 	
 	<repositories>
@@ -49,8 +57,33 @@
 		</dependency>
 		<dependency>
 			<groupId>org.jetbrains.kotlin</groupId>
-			<artifactId>kotlin-test</artifactId>
+			<artifactId>kotlin-test-junit</artifactId>
 			<version>${kotlin.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-commons</artifactId>
+			<version>${junit-platform.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit-jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit-jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>${assertj.version}</version>
 			<scope>test</scope>
 		</dependency>
 		
@@ -85,6 +118,12 @@
 				<executions>
 					<execution>
 						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>attach-javadocs</id>
 						<goals>
 							<goal>jar</goal>
 						</goals>
