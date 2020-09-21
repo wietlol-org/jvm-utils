@@ -6,7 +6,7 @@
 	
 	<groupId>me.wietlol.utils</groupId>
 	<artifactId>utils</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>pom</packaging>
 	
 	<modules>
@@ -22,8 +22,6 @@
 		<maven.compiler.source>${project.java.version}</maven.compiler.source>
 		<maven-source.version>3.2.1</maven-source.version>
 		
-		<wagon.git.version>0.2.5</wagon.git.version>
-		
 		<kotlin.version>1.4.0</kotlin.version>
 		<kotlin-maven.jvm-target>${project.java.version}</kotlin-maven.jvm-target>
 		
@@ -34,20 +32,6 @@
 		<jackson.version>2.9.7</jackson.version>
 		<tomplot.version>1.0.0-SNAPSHOT</tomplot.version>
 	</properties>
-	
-	<repositories>
-		<repository>
-			<id>Wietlol-github</id>
-			<name>maven_repository</name>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<url>https://raw.github.com/Wietlol/maven_repository/releases</url>
-		</repository>
-	</repositories>
 	
 	<dependencies>
 		<dependency>
@@ -94,19 +78,17 @@
 		</dependency>
 	</dependencies>
 	
-	<pluginRepositories>
-		<pluginRepository>
-			<id>synergian-repo</id>
-			<url>https://raw.github.com/synergian/wagon-git/releases</url>
-		</pluginRepository>
-	</pluginRepositories>
-	
 	<distributionManagement>
 		<repository>
-			<id>maven_repository</id>
-			<name>maven_repository</name>
-			<url>git:releases://git@github.com:Wietlol/maven_repository.git</url>
+			<id>central</id>
+			<name>a0vmtz5txwt9h-artifactory-primary-0-releases</name>
+			<url>https://wietlol.jfrog.io/artifactory/libs-release</url>
 		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>a0vmtz5txwt9h-artifactory-primary-0-snapshots</name>
+			<url>https://wietlol.jfrog.io/artifactory/libs-snapshot-local</url>
+		</snapshotRepository>
 	</distributionManagement>
 	
 	<build>
@@ -155,12 +137,5 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<extensions>
-			<extension>
-				<groupId>ar.com.synergian</groupId>
-				<artifactId>wagon-git</artifactId>
-				<version>${wagon.git.version}</version>
-			</extension>
-		</extensions>
 	</build>
 </project>
