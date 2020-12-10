@@ -41,6 +41,7 @@ class JsonBuilder
 		val keyTypes = listOf(
 			"Char",
 			"CharSequence",
+			"Jsonable",
 		)
 		
 //		iterableTypes.forEach { (arr, element) ->

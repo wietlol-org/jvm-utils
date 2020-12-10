@@ -336,6 +336,14 @@ fun Map<out CharSequence?, Jsonable?>?.toJsonString(): String =
 		?.surroundWith("{","}")
 		?: "null"
 
+@JvmName("toJsonMapJsonableJsonable")
+fun Map<out Jsonable?, Jsonable?>?.toJsonString(): String =
+	this
+		?.map { "${it.key.toJsonString()}:${it.value.toJsonString()}" }
+		?.joinToString(",")
+		?.surroundWith("{","}")
+		?: "null"
+
 @JvmName("toJsonMapCharBoolean")
 fun Map<out Char?, Boolean?>?.toJsonString(): String =
 	this
@@ -346,6 +354,14 @@ fun Map<out Char?, Boolean?>?.toJsonString(): String =
 
 @JvmName("toJsonMapCharSequenceBoolean")
 fun Map<out CharSequence?, Boolean?>?.toJsonString(): String =
+	this
+		?.map { "${it.key.toJsonString()}:${it.value.toJsonString()}" }
+		?.joinToString(",")
+		?.surroundWith("{","}")
+		?: "null"
+
+@JvmName("toJsonMapJsonableBoolean")
+fun Map<out Jsonable?, Boolean?>?.toJsonString(): String =
 	this
 		?.map { "${it.key.toJsonString()}:${it.value.toJsonString()}" }
 		?.joinToString(",")
@@ -368,6 +384,14 @@ fun Map<out CharSequence?, Byte?>?.toJsonString(): String =
 		?.surroundWith("{","}")
 		?: "null"
 
+@JvmName("toJsonMapJsonableByte")
+fun Map<out Jsonable?, Byte?>?.toJsonString(): String =
+	this
+		?.map { "${it.key.toJsonString()}:${it.value.toJsonString()}" }
+		?.joinToString(",")
+		?.surroundWith("{","}")
+		?: "null"
+
 @JvmName("toJsonMapCharShort")
 fun Map<out Char?, Short?>?.toJsonString(): String =
 	this
@@ -378,6 +402,14 @@ fun Map<out Char?, Short?>?.toJsonString(): String =
 
 @JvmName("toJsonMapCharSequenceShort")
 fun Map<out CharSequence?, Short?>?.toJsonString(): String =
+	this
+		?.map { "${it.key.toJsonString()}:${it.value.toJsonString()}" }
+		?.joinToString(",")
+		?.surroundWith("{","}")
+		?: "null"
+
+@JvmName("toJsonMapJsonableShort")
+fun Map<out Jsonable?, Short?>?.toJsonString(): String =
 	this
 		?.map { "${it.key.toJsonString()}:${it.value.toJsonString()}" }
 		?.joinToString(",")
@@ -400,6 +432,14 @@ fun Map<out CharSequence?, Int?>?.toJsonString(): String =
 		?.surroundWith("{","}")
 		?: "null"
 
+@JvmName("toJsonMapJsonableInt")
+fun Map<out Jsonable?, Int?>?.toJsonString(): String =
+	this
+		?.map { "${it.key.toJsonString()}:${it.value.toJsonString()}" }
+		?.joinToString(",")
+		?.surroundWith("{","}")
+		?: "null"
+
 @JvmName("toJsonMapCharLong")
 fun Map<out Char?, Long?>?.toJsonString(): String =
 	this
@@ -410,6 +450,14 @@ fun Map<out Char?, Long?>?.toJsonString(): String =
 
 @JvmName("toJsonMapCharSequenceLong")
 fun Map<out CharSequence?, Long?>?.toJsonString(): String =
+	this
+		?.map { "${it.key.toJsonString()}:${it.value.toJsonString()}" }
+		?.joinToString(",")
+		?.surroundWith("{","}")
+		?: "null"
+
+@JvmName("toJsonMapJsonableLong")
+fun Map<out Jsonable?, Long?>?.toJsonString(): String =
 	this
 		?.map { "${it.key.toJsonString()}:${it.value.toJsonString()}" }
 		?.joinToString(",")
@@ -432,6 +480,14 @@ fun Map<out CharSequence?, Float?>?.toJsonString(): String =
 		?.surroundWith("{","}")
 		?: "null"
 
+@JvmName("toJsonMapJsonableFloat")
+fun Map<out Jsonable?, Float?>?.toJsonString(): String =
+	this
+		?.map { "${it.key.toJsonString()}:${it.value.toJsonString()}" }
+		?.joinToString(",")
+		?.surroundWith("{","}")
+		?: "null"
+
 @JvmName("toJsonMapCharDouble")
 fun Map<out Char?, Double?>?.toJsonString(): String =
 	this
@@ -442,6 +498,14 @@ fun Map<out Char?, Double?>?.toJsonString(): String =
 
 @JvmName("toJsonMapCharSequenceDouble")
 fun Map<out CharSequence?, Double?>?.toJsonString(): String =
+	this
+		?.map { "${it.key.toJsonString()}:${it.value.toJsonString()}" }
+		?.joinToString(",")
+		?.surroundWith("{","}")
+		?: "null"
+
+@JvmName("toJsonMapJsonableDouble")
+fun Map<out Jsonable?, Double?>?.toJsonString(): String =
 	this
 		?.map { "${it.key.toJsonString()}:${it.value.toJsonString()}" }
 		?.joinToString(",")
@@ -464,6 +528,14 @@ fun Map<out CharSequence?, Char?>?.toJsonString(): String =
 		?.surroundWith("{","}")
 		?: "null"
 
+@JvmName("toJsonMapJsonableChar")
+fun Map<out Jsonable?, Char?>?.toJsonString(): String =
+	this
+		?.map { "${it.key.toJsonString()}:${it.value.toJsonString()}" }
+		?.joinToString(",")
+		?.surroundWith("{","}")
+		?: "null"
+
 @JvmName("toJsonMapCharCharSequence")
 fun Map<out Char?, CharSequence?>?.toJsonString(): String =
 	this
@@ -480,6 +552,14 @@ fun Map<out CharSequence?, CharSequence?>?.toJsonString(): String =
 		?.surroundWith("{","}")
 		?: "null"
 
+@JvmName("toJsonMapJsonableCharSequence")
+fun Map<out Jsonable?, CharSequence?>?.toJsonString(): String =
+	this
+		?.map { "${it.key.toJsonString()}:${it.value.toJsonString()}" }
+		?.joinToString(",")
+		?.surroundWith("{","}")
+		?: "null"
+
 @JvmName("toJsonMapCharUUID")
 fun Map<out Char?, UUID?>?.toJsonString(): String =
 	this
@@ -490,6 +570,14 @@ fun Map<out Char?, UUID?>?.toJsonString(): String =
 
 @JvmName("toJsonMapCharSequenceUUID")
 fun Map<out CharSequence?, UUID?>?.toJsonString(): String =
+	this
+		?.map { "${it.key.toJsonString()}:${it.value.toJsonString()}" }
+		?.joinToString(",")
+		?.surroundWith("{","}")
+		?: "null"
+
+@JvmName("toJsonMapJsonableUUID")
+fun Map<out Jsonable?, UUID?>?.toJsonString(): String =
 	this
 		?.map { "${it.key.toJsonString()}:${it.value.toJsonString()}" }
 		?.joinToString(",")

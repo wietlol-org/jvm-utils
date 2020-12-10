@@ -6,7 +6,7 @@
 	
 	<groupId>me.wietlol.utils</groupId>
 	<artifactId>utils</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	
 	<modules>
@@ -21,16 +21,16 @@
 		<maven.compiler.target>${project.java.version}</maven.compiler.target>
 		<maven.compiler.source>${project.java.version}</maven.compiler.source>
 		<maven-source.version>3.2.1</maven-source.version>
+		<maven-javadoc.version>3.4.0</maven-javadoc.version>
 		
-		<kotlin.version>1.4.0</kotlin.version>
+		<kotlin.version>1.6.21</kotlin.version>
 		<kotlin-maven.jvm-target>${project.java.version}</kotlin-maven.jvm-target>
 		
-		<junit-platform.version>1.5.2</junit-platform.version>
-		<junit-jupiter.version>5.4.2</junit-jupiter.version>
-		<assertj.version>3.12.2</assertj.version>
+		<junit-platform.version>1.8.2</junit-platform.version>
+		<junit-jupiter.version>5.8.2</junit-jupiter.version>
+		<assertj.version>3.22.0</assertj.version>
 		
-		<jackson.version>2.9.7</jackson.version>
-		<tomplot.version>1.0.0-SNAPSHOT</tomplot.version>
+		<jackson.version>2.13.3</jackson.version>
 	</properties>
 	
 	<dependencies>
@@ -76,19 +76,18 @@
 			<artifactId>maven-source-plugin</artifactId>
 			<version>${maven-source.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-javadoc-plugin</artifactId>
+			<version>${maven-javadoc.version}</version>
+		</dependency>
 	</dependencies>
 	
 	<distributionManagement>
 		<repository>
-			<id>central</id>
-			<name>a0vmtz5txwt9h-artifactory-primary-0-releases</name>
-			<url>https://wietlol.jfrog.io/artifactory/libs-release</url>
+			<id>wietlol</id>
+			<url>https://pkgs.dev.azure.com/hawkwietlol/Wietlol/_packaging/public/maven/v1</url>
 		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>a0vmtz5txwt9h-artifactory-primary-0-snapshots</name>
-			<url>https://wietlol.jfrog.io/artifactory/libs-snapshot-local</url>
-		</snapshotRepository>
 	</distributionManagement>
 	
 	<build>
@@ -104,6 +103,12 @@
 							<goal>jar</goal>
 						</goals>
 					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<executions>
 					<execution>
 						<id>attach-javadocs</id>
 						<goals>
