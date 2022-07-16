@@ -17,7 +17,7 @@ class CountingSort
 		}
 		
 		val difference = max!! - min!!
-		val count = Array(difference + 1) { 0 }
+		val count = IntArray(difference + 1)
 		
 		input.forEach { count[it - min!!]++ }
 		
