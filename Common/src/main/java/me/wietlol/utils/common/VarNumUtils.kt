@@ -61,13 +61,13 @@ fun writeSignedVarInt(value: Int, out: DataOutput)
 @Throws(IOException::class)
 fun writeUnsignedVarInt(value: Int, out: DataOutput)
 {
-	var value = value
-	while ((value and -0x80) != 0)
+	var remaining = value
+	while ((remaining and -0x80) != 0)
 	{
-		out.writeByte(value and 0x7F or 0x80)
-		value = value ushr 7
+		out.writeByte(remaining and 0x7F or 0x80)
+		remaining = remaining ushr 7
 	}
-	out.writeByte(value and 0x7F)
+	out.writeByte(remaining and 0x7F)
 }
 
 fun writeSignedVarInt(value: Int): ByteArray
@@ -81,15 +81,15 @@ fun writeSignedVarInt(value: Int): ByteArray
  */
 fun writeUnsignedVarInt(value: Int): ByteArray
 {
-	var value = value
+	var remaining = value
 	val byteArrayList = ByteArray(10)
 	var i = 0
-	while ((value and -0x80).toLong() != 0L)
+	while ((remaining and -0x80).toLong() != 0L)
 	{
-		byteArrayList[i++] = (value and 0x7F or 0x80).toByte()
-		value = value ushr 7
+		byteArrayList[i++] = (remaining and 0x7F or 0x80).toByte()
+		remaining = remaining ushr 7
 	}
-	byteArrayList[i] = (value and 0x7F).toByte()
+	byteArrayList[i] = (remaining and 0x7F).toByte()
 	val out = ByteArray(i + 1)
 	while (i >= 0)
 	{
