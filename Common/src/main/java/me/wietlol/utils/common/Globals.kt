@@ -30,6 +30,19 @@ fun <K, V> manyValuesMapOf(vararg pairs: Pair<K, V>): ManyValuesMap<K, V> = Immu
 	)
 )
 
+fun <T> T.recursiveLet(mapper: (T) -> T?): Sequence<T>
+{
+	val root = this
+	return sequence {
+		var current: T? = root
+		while (current != null)
+		{
+			yield(current)
+			current = mapper(current)
+		}
+	}
+}
+
 // https://en.wikipedia.org/wiki/Tree_traversal
 fun <T> Sequence<T>.recursiveMapPreOrder(mapper: (T) -> Sequence<T>): Sequence<T> =
 	sequence {
