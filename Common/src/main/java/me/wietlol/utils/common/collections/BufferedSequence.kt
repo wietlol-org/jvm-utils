@@ -28,4 +28,5 @@ class BufferedSequence<out T>(
 }
 
 fun <T> Sequence<T>.buffered() =
-	BufferedSequence(this)
+	this as? BufferedSequence<T>
+		?: BufferedSequence(this)
