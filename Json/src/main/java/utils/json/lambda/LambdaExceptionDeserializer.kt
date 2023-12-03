@@ -6,13 +6,12 @@ import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer
 
-class LambdaExceptionDeserializer(
-	val objectMapper: ObjectMapper
-) : StdDeserializer<LambdaException>(null as Class<*>?)
+class LambdaExceptionDeserializer : StdDeserializer<LambdaException>(null as Class<*>?)
 {
 	override fun deserialize(parser: JsonParser, context: DeserializationContext): LambdaException
 	{
-		val node: JsonNode = parser.codec.readTree(parser)
+		val objectMapper = parser.codec as ObjectMapper
+		val node: JsonNode = objectMapper.readTree(parser)
 		
 		return LambdaException()
 			.apply {
